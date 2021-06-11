@@ -22,31 +22,26 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 					?>
-				<div class="col-md-12 col-lg-4">
-					<div class="articles-category">
-						<div class="articles-category-foto">
-							<?php echo get_the_post_thumbnail(); ?>
-							<?php foreach ( get_the_category() as $category ) : ?>
-								<a href="<?php echo esc_url( get_category_link( $category ) ); ?>" class="banner-category">
-									<?php echo esc_html( $category->name ); ?>
-								</a>
-							<?php endforeach; ?>
-						</div>
-						<div class="articles-category-text">
-							<h4><a href="<?php the_permalink(); ?>" class="link-hover"><?php the_title(); ?></a></h4>
-							<div class="articles-category-about">
-								<span class="spacing-right"><?php the_date(); ?></span>
-								<div class="articles-category-author spacing-right"><img
-										src="img/merak-testimonials-3.jpg" alt=""></div>
-								<span class="spacing-right"> By <span class="author-name"><?php the_author(); ?></span></span>
+					<div class="col-md-12 col-lg-4">
+						<div class="articles-category">
+							<div class="articles-category-foto">
+								<?php
+								get_template_part( 'template-parts/content' );
+								?>
 							</div>
-							<a href="<?php the_permalink(); ?>" class="link-hover">Continue reading <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
-				</div>	
+
 				<?php endwhile; ?>
 			</div>
-		<?php endif; ?>
+			<?php
+
+			else :
+
+				get_template_part( 'template-parts/content-none' );
+
+			endif;
+			?>
 	</div>
 </section>
 <?php

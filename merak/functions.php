@@ -14,6 +14,7 @@ if ( ! defined( 'MERAK_DIR_URI' ) ) {
 }
 
 require_once MERAK_DIR_PATH . '/inc/helpers/autoloader.php';
+require_once MERAK_DIR_PATH . '/inc/helpers/template-tags.php';
 
 if ( ! function_exists( 'merak_get_theme_instance' ) ) {
 	/**

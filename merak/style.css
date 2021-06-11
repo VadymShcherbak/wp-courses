@@ -2301,6 +2301,26 @@ input[type=submit] {
   border: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  }
+
+.updated:not(.published) {
+  display: none;
+}
+
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+.merak-read-more {
+  color: white;
+}
+
+.entry-content p {
+  text-align: left;
+}
+
+.entry-content button {
+  margin-top: 10px;
 }
 
 .color-schema-white {
@@ -3433,6 +3453,7 @@ input[type=submit] {
 .articles-category-foto {
   position: relative;
   margin-bottom: 14px;
+  text-align: left;
 }
 
 .banner-category {
@@ -3462,12 +3483,18 @@ input[type=submit] {
 }
 
 .articles-category-text {
-  padding: 20px;
+  padding: 10px;
   line-height: 1.8;
+  text-align: left;
 }
 .articles-category-text h5 {
   margin-bottom: 10px;
 }
+
+.articles-category-text h4 {
+  margin-bottom: 0;
+}
+
 .articles-category-text a {
   font-weight: 600;
   color: rgba(16, 16, 16, 0.8);
