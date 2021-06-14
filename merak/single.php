@@ -9,32 +9,43 @@ get_header();
 ?>
 <section class="articles">
 	<div class="container">
-		<?php
-		if ( have_posts() ) :
-			?>
-			<div class="row spacing-bottom-65 with-animated">
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-12">
 				<?php
-				while ( have_posts() ) :
-					the_post();
+				if ( have_posts() ) :
 					?>
-					<div class="articles-category">
-						<div class="articles-category-foto">
-							<?php
-							get_template_part( 'template-parts/content' );
+					<div class="row spacing-bottom-65 with-animated">
+						<?php
+						while ( have_posts() ) :
+							the_post();
 							?>
-						</div>
+							<div class="articles-category">
+								<div class="articles-category-foto">
+									<?php
+									get_template_part( 'template-parts/content' );
+									?>
+								</div>
+							</div>
+
+						<?php endwhile; ?>
 					</div>
+					<?php
 
-				<?php endwhile; ?>
-			</div>
+					else :
+
+						get_template_part( 'template-parts/content-none' );
+					endif;
+					?>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-12">
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
+
 			<?php
-
-			else :
-
-				get_template_part( 'template-parts/content-none' );
-
-			endif;
+			merak_pagination();
 			?>
+
 	</div>
 </section>
 <?php

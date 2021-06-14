@@ -23,5 +23,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 ?>
 
 	<header class="header-main">
-		<?php get_template_part( 'template-parts/header/main', 'nav' ); ?>
+		<?php
+		get_template_part( 'template-parts/header/main', 'nav' );
+		?>
 	</header>

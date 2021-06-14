@@ -43,7 +43,7 @@ function get_the_post_custom_thumbnail( $post_id, $size = 'featured-thumbnail', 
  *
  * @param  int    $post_id Post ID.
  * @param  string $size The registered image size.
- * @param  array  $additional_attributes Aditional attributes.
+ * @param  array  $additional_attributes Additional attributes.
  */
 function the_post_custom__thumbnail( $post_id, $size = 'featured-thumbnail', $additional_attributes = array() ) {
 	echo get_the_post_custom_thumbnail( $post_id, $size, $additional_attributes );
@@ -121,4 +121,25 @@ function merak_excerpt_more( $more = '' ) {
 	}
 
 	return $more;
+}
+
+/**
+ * Pagination.
+ */
+function merak_pagination() {
+	$allowed_tags = array(
+		'span' => array(
+			'class' => array(),
+		),
+		'a'    => array(
+			'class' => array(),
+			'href'  => array(),
+		),
+	);
+	$args         = array(
+		'before_page_number' => '<span class="button">',
+		'after_page_number'  => '</span>',
+	);
+
+	printf( '<nav class="merak-pagination clearfix">%s</nav>', wp_kses( paginate_links( $args ), $allowed_tags ) );
 }
